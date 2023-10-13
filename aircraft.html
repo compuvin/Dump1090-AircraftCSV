@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Data Display</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSV Data</h1>
+    <table id="csvTable">
+        <!-- Table will be populated here using JavaScript -->
+    </table>
+
+    <script>
+        // Function to parse and display CSV data in an HTML table
+        function displayCSV(csvData) {
+            var lines = csvData.split('\n');
+            var table = document.getElementById('csvTable');
+            
+            for (var i = 0; i < lines.length; i++) {
+                var row = table.insertRow(-1);
+                var cells = lines[i].split(',');
+                
+                for (var j = 0; j < cells.length; j++) {
+                    var cell = row.insertCell(-1);
+
+                    // Check if it's the "hex" column
+                    if (j === 1) { // Assuming "hex" is the second column (index 1)
+                        var hexValue = cells[j];
+                        var link = document.createElement('a');
+                        link.href = 'http://flightaware.com/live/modes/' + hexValue + '/redirect';
+                        link.textContent = hexValue;
+                        cell.appendChild(link);
+                    } else {
+                        cell.innerHTML = cells[j];
+                    }
+                }
+            }
+        }
+
+        // Function to load CSV file using Fetch API
+        function loadCSVFile() {
+            fetch('output.csv') // Replace 'output.csv' with the path to your CSV file
+                .then(response => response.text())
+                .then(data => displayCSV(data));
+        }
+
+        // Call the function to load and display CSV data
+        loadCSVFile();
+    </script>
+</body>
+</html>
