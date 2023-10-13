@@ -34,3 +34,5 @@ I personally like creating a service for these sort of things so below is an exa
    [Install]
    WantedBy=multi-user.target
 ```
+
+[![CodeFactor](https://www.codefactor.io/repository/github/compuvin/dump1090-aircraftcsv/badge/main)](https://www.codefactor.io/repository/github/compuvin/dump1090-aircraftcsv/overview/main)
