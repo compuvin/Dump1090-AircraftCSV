@@ -1,9 +1,9 @@
 # Dump1090-AircraftCSV
 Creates a CSV and HTML page from Dump1090 data.
 
-Dump1090 is used by multiple flight tracking programs. I personnaly have been messing aroung with FlightRadar24. This script keeps it simple and watches the json file written by dump1090 and writes a CSV file to the www directory for dump1090 so it is accessable. The html file should be saved in the same www directory.
+Dump1090 is used by multiple flight tracking programs. I personnaly have been messing aroung with FlightRadar24. This script keeps it simple and watches the json file written by dump1090 and writes a CSV file to the html directory for dump1090 so it is accessable. The html file should be saved in the same html directory (/usr/share/dump1090-mutability/html).
 <br><br>
-I personally like creating a service for these sort of things so below is an example of how do do that. The script needs to be run as root or the user will need to be given rights to the www directory (probably safer).
+I personally like creating a service for these sort of things so below is an example of how do do that. The script needs to be run as root or the user will need to be given rights to the html directory (probably safer).
 <br><br>
 1. sudo nano /etc/systemd/system/fr24aircraft.service
 2. Save the data below in the file
