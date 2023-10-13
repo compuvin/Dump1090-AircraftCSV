@@ -11,6 +11,7 @@ I personally like creating a service for these sort of things so below is an exa
 4. sudo systemctl enable fr24aircraft
 5. sudo systemctl start fr24aircraft
 
+```
 ## /etc/systemd/system/fr24aircraft.service
 
    [Unit]
@@ -32,3 +33,4 @@ I personally like creating a service for these sort of things so below is an exa
    
    [Install]
    WantedBy=multi-user.target
+```
