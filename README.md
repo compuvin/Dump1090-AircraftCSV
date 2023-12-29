@@ -25,7 +25,7 @@ I personally like creating a service for these sort of things so below is an exa
    Group=pi
 
    # Start Screen and aircraft script
-   ExecStart=screen -S fr -d -m sudo ./aircraft.py
+   ExecStart=screen -S fr -d -m sudo ./aircraftcsv.py
 
    # systemd will kill Screen after the 10-second delay. No explicit kill for Screen needed
    ExecStop=screen -X -S fr quit
